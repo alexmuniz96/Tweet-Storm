@@ -4,7 +4,8 @@ import "./global.css"
 
 function App() {
 
-  const [text, setText] = useState('')
+  const [text, setText] = useState('');
+  const [checkbox, setCheckbox] = useState(false);
 
   function handleSubmit(e: FormEvent) {
     e.preventDefault()
@@ -14,6 +15,10 @@ function App() {
     setText(target.value)
   }
 
+  function handlecheckboxChange({ target }: ChangeEvent<HTMLInputElement>): void {
+    setCheckbox(target.checked)
+  }
+
   return (
     <section className="container">
       <h1> Tweet Storm Zenklub </h1>
@@ -21,9 +26,19 @@ function App() {
         <form onSubmit={handleSubmit}>
           <p>Digite seu texto no campo abaixo</p>
           <textarea value={text} onChange={handleChange} ></textarea>
-          {/* <button>Dividir texto</button> */}
+
+          <label className="checkbox">
+            <input
+              type="checkbox"
+              value='não quebrar palavras'
+              checked={checkbox}
+              onChange={handlecheckboxChange}
+            />
+            Não quebrar palavras
+          </label>
+
         </form>
-        <Tweet text={text} />
+        <Tweet text={text} notWorkBreaker={checkbox} />
 
       </div>
     </section>

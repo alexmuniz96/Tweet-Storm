@@ -82,3 +82,11 @@ button{
 .pagination{
   color:#6732d1;
 }
+
+.checkbox{
+  display: flex;
+  justify-content:center;
+  align-item:center;
+  gap: 5px;
+}
+  

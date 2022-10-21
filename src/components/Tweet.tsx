@@ -2,13 +2,15 @@ import React from 'react'
 
 interface textProps {
   text: string
+  notWorkBreaker: boolean
 }
 
-export function Tweet({ text }: textProps) {
+export function Tweet({ text, notWorkBreaker }: textProps) {
 
-  const dividedText = text.match(/.{1,136}($|\s)/g)
+  let regex;
+  notWorkBreaker ? regex = /.{1,136}($|\s)/g : regex = /.{1,136}/g;
 
-  console.log(dividedText)
+  const dividedText = text.match(regex)
 
   return (
     <div className='tweetContainer'>

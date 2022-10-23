@@ -27,7 +27,7 @@ Esse projeto foi desenvolvido com as seguintes tecnologias:
 - Clone o repositório e acesse a pasta;
 - Instale as dependências com `npm i`;
 - Inicie o projeto  com `npm run dev`;
-- Para testar use o `npm test`;
+- Para rodar os testes use o `npm test`;
 
 A aplicação pode ser acessada em [`localhost:4000`](http://localhost:4000).
 
